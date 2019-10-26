@@ -1,0 +1,319 @@
+<Setup>
+
+	Screen:
+
+		name: 'main'
+
+		GridLayout:
+
+			cols: 1
+			rows: 4
+
+			canvas.before:
+				Color:
+					rgba: 180, 180, 180, 0.8
+				Rectangle:
+					pos: self.pos
+					size: self.size
+
+			BoxLayout:
+
+				orientation: 'horizontal'
+
+				ActionBar:
+					pos_hint: {'top':1}
+					background_color: 0, 0, 0, 0.3
+
+					ActionView:
+
+						ActionPrevious:
+							with_previous: False
+							app_icon: ''
+							app_icon_width: 0
+
+						ActionLabel:
+							text: 'Protótipo CITIG - 2019'
+
+			Image:
+				source: './images/logo.png'
+
+			BoxLayout:
+
+				orientation: 'horizontal'
+
+				ActionBar:
+					pos_hint: {'bottom':1}
+					background_color: 0, 3, 0, 0.4
+
+					ActionView:
+
+						ActionPrevious:
+							with_previous: False
+							app_icon: ''
+							app_icon_width: 50
+							app_icon_height: 50
+
+						ActionGroup:
+							text: 'Menu'
+
+							ActionButton:
+								id: management
+								text: 'Gestão'
+								background_color: 0, 3, 0, 0.5
+								on_release: root.current = 'managementscreen'
+
+							ActionButton:
+								id: about
+								text: 'Sobre'
+								background_color: 0, 3, 0, 0.5
+								on_release: root.current = 'aboutscreen'
+
+							ActionButton:
+								id: business
+								text: 'Negócio'
+								background_color: 0, 3, 0, 0.5
+								on_release: root.current = 'businessscreen'
+
+							ActionButton:
+								id: security
+								text: 'Segurança'
+								background_color: 0, 3, 0, 0.5
+								on_release: root.current = 'securityscreen'
+
+							ActionButton:
+								id: extra
+								text: 'Extra'
+								background_color: 0, 3, 0, 0.5
+								on_release: root.current = 'extrascreen'
+
+	ManagementScreen:
+		name: 'managementscreen'
+
+	AboutScreen:
+		name: 'aboutscreen'
+
+	BusinessScreen:
+		name: 'businessscreen'
+
+	SecurityScreen:
+		name: 'securityscreen'
+
+	ExtraScreen:
+		name: 'extrascreen'
+
+<ManagementScreen>:
+	
+	canvas.before:
+		Color:
+			rgba: 180, 180, 180, 0.8
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	
+	GridLayout:
+
+		cols: 1
+		rows: 3
+
+		ActionBar:
+			pos_hint: {'top':1}
+			background_color: 0, 0, 0, 0.3
+
+			ActionView:
+
+				ActionPrevious:
+					app_icon: ''
+					app_icon_width: 0
+					on_release: app.root.current = 'main'
+
+				ActionLabel:
+					text: 'Gestão de Equipamentos'
+
+		GridLayout:
+
+			cols: 2
+						
+			Button:
+				background_normal: './images/door.png'
+				size_hint: None, None
+				size: 100, 100
+				on_release: root.send_post('http://192.168.43.10/door')
+
+			Label:
+				text: ''
+
+			Button:
+				background_normal: './images/window.png'
+				size_hint: None, None
+				size: 100, 100
+				on_release: root.send_post('192.168.1.34/')
+
+			Label:
+				text: ''
+
+			Button:
+				background_normal: './images/lamp.png'
+				size_hint: None, None
+				size: 100, 100
+				on_release: root.send_post('http://192.168.43.11/lamp')
+
+			Label:
+				text: ''
+
+<AboutScreen>:
+	
+	canvas.before:
+		Color:
+			rgba: 180, 180, 180, 0.8
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	GridLayout:
+
+		cols: 1
+
+		ActionBar:
+			pos_hint: {'top':1}
+			background_color: 0, 0, 0, 0.3
+
+			ActionView:
+
+				ActionPrevious:
+					app_icon: ''
+					app_icon_width: 30
+					on_release: app.root.current = 'main'
+
+				ActionLabel:
+					text: 'Sobre a iniciativa'
+
+		Image:
+			source: './images/equipe.jpg'
+
+
+		ScrollView:
+		    do_scroll_x: False
+		    do_scroll_y: True
+
+		    Label:
+		    	size_hint: 1, None
+		    	text_size: self.width, None
+		    	size: self.texture_size
+		        text:
+		            '\nSomos a Exponencial, uma empresa nacional de desenvolvimento de tecnologia que tem como fundamento a vontade de levar as principais áreas da tecnologia para todas as regiões e focado a atender o usuário final e as micro e pequenas empresas com um serviço de qualidade e, através das ferramentas tecnológicas e as novas áreas de estudos, alavancar os pequenos negócios. \n\n\nAlém de entregarmos soluções, o nosso principal intuito / diferencial é se tornar parceiros dos nossos clientes, trabalhando para o crescimento mútuo e o desenvolvimento do comércio e da população da região.\n\nMissão: Desenvolver e levar a todas os lugares o que há de novo no mundo da tecnologia a preços acessíveis e com o foco em trazer conforto e resultado a todos. \n\nVisão: Ser uma das maiores empresas de tecnologia e guiar e desenvolvimento a população para o futuro.\n\nValores: Ética, responsabilidade, compromisso e trabalho em equipe define a Exponencial.'
+
+<BusinessScreen>:
+	
+	canvas.before:
+		Color:
+			rgba: 180, 180, 180, 0.8
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	GridLayout:
+
+		cols: 1
+
+		ActionBar:
+			pos_hint: {'top':1}
+			background_color: 0, 0, 0, 0.3
+
+			ActionView:
+
+				ActionPrevious:
+					app_icon: ''
+					app_icon_width: 30
+					on_release: app.root.current = 'main'
+
+				ActionLabel:
+					text: 'Plano de Negócio'
+
+		Image:
+			source: './images/canvas.png'
+
+		ScrollView:
+		    do_scroll_x: False
+		    do_scroll_y: True
+
+		    Label:
+		    	size_hint: 1, None
+		    	text_size: self.width, None
+		    	size: self.texture_size
+		        text:
+		        	'\nProblemas:\n- Furtos a residências e estabelecimentos\n- Sentimento de medo e insegurança\n- Invasões e sequestros\n\n\nSolução:\n-Acesso e controle aos equipamentos de segurança a distância\n-Sistema detector de movimento e presença para controle automático.\n\n\nMétricas Chaves:\n- Número de sistema instalados.\n- Número de incorporadoras parceiras.\n\n\nProposta única de valor:\n- Um sistema capaz de solucionar os problemas de furtos e invasão a residências e estabelecimentos, trazendo segurança e tranquilidade aos proprietários e visitantes.\n\n\nVantagem competitiva:\n- Preço acessível\n- Exclusividade no mercado.\n\n\nCanais:\n- Website\n- Aplicativo\n- Corretores de vendas\n\n\nSegmento de clientes:\n- População de classe média à alta.\n - Idade entre 23 à 45 anos.\n- Proprietários de casas e apartamentos.\n- Incorporadoras com público alvo similar.\n\n\nEstrutura de custos:\n- Mão de obra qualificada\n- Instalação e manutenção.\nInfraestrutura e rede de comunicação.\n- Fabricação dos componentes.\n\n\nFonte de receitas:\n- Sistema de automatização residencial.\nEquipamentos complementares ao sistema.\n- Parcerias estratégicas.'
+
+<SecurityScreen>:
+	
+	canvas.before:
+		Color:
+			rgba: 180, 180, 180, 0.8
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	GridLayout:
+
+		cols: 1
+
+		ActionBar:
+			pos_hint: {'top':1}
+			background_color: 0, 0, 0, 0.3
+
+			ActionView:
+
+				ActionPrevious:
+					app_icon: ''
+					app_icon_width: 30
+					on_release: app.root.current = 'main'
+
+				ActionLabel:
+					text: 'Segurança'
+
+		ScrollView:
+		    do_scroll_x: False
+		    do_scroll_y: True
+
+		    Label:
+		    	size_hint: 1, None
+		    	text_size: self.width, None
+		    	size: self.texture_size
+		        text:
+		        	'\nSegundo o DEIC (Departamento de Investigações Criminais), foram registrados 6.452 casos de furtos e roubos a residências em condomínios no primeiro semestre deste ano na capital de São Paulo, trazendo medo e insegurança aos moradores conforme salienta a pesquisa da CRISP (Centro de Estudos de Criminalidade e Segurança Pública) em parceria com o instituto de pesquisa Datafolha que constatou que cerca de 71,9% da população brasileira tem medo da casa ser invadida.\n\nO sistema desenvolvido faz parte da área de IoT (Internet das coisas) que conforme Zambrano et al. (2016) vai além de um ambiente inteligente; é ser capaz de conectar os aparelhos físicos no smartphone dando solução para muitos problemas que temos atualmente e, em especial a segurança, tema de nossa pesquisa científica. Nosso projeto visa solucionar os problemas de segurança presente em todo mundo desenvolvendo um sistema de automação remoto onde os usuários acessam os elementos de entrada e saída (Ex: portas, janelas) da residência ou estabelecimento através de um aplicativo conectado a rede e envie comandos diretos aos elementos ou permita que o sistema através de câmeras de segurança, a partir da detecção de atividades no local , tranque automaticamente os elementos.\n\nO comando é transmitido via internet até a central de processamento que identifica qual elemento foi requisitado e qual função será executada e transmitir para os microcontroladores para executar as ações.'
+
+<ExtraScreen>:
+	
+	canvas.before:
+		Color:
+			rgba: 180, 180, 180, 0.8
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+	GridLayout:
+
+		cols: 1
+
+		ActionBar:
+			pos_hint: {'top':1}
+			background_color: 0, 0, 0, 0.3
+
+			ActionView:
+
+				ActionPrevious:
+					app_icon: ''
+					app_icon_width: 30
+					on_release: app.root.current = 'main'
+
+				ActionLabel:
+					text: 'Conteúdos Extras'
+
+		ScrollView:
+		    do_scroll_x: False
+		    do_scroll_y: True
+
+		    Label:
+		    	size_hint: 1, None
+		    	text_size: self.width, None
+		    	size: self.texture_size
+		        text: 'Aqui vai mostrar os resultados do protótipo do Lucas'
