@@ -14,9 +14,10 @@ It's a project to help students to learning about IoT. This repository is a amou
 It's a open project that everybody can use to create a IoT environment.
 
 # What can I do with this?
-You will need to:
+You will need to: 
 2. Arduino Uno R3
 2. ESP8266 NodeMCU CP2101
+1. Display LCD
 1. Biometric Sensor
 1. Lock
 1. Relay
