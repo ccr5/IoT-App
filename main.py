@@ -23,6 +23,8 @@ class ManagementScreen(Screen):
         else:
             url = url + "?status=on"
             requests.get(url)
+            url = url[:-2] + "off"
+            requests.get(url)
 
     def on_pre_enter(self, *args):
         Window.bind(on_keyboard=self.voltar)

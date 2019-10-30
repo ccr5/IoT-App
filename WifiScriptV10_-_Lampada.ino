@@ -4,10 +4,10 @@
 #include <ESP8266mDNS.h>
 
 //Nome da sua rede Wifi
-const char* ssid = "EniacEventos";
+const char* ssid = "MatheusN";
 
 //Senha da rede
-const char* password = "";
+const char* password = "HelloMoto";
 
 //Static infos
 IPAddress ip(192, 168, 43, 11); 
