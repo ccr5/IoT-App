@@ -32,10 +32,7 @@
 							app_icon_width: 0
 
 						ActionLabel:
-							text: 'Protótipo CITIG - 2019'
-
-			Image:
-				source: './images/logo.png'
+							text: 'IoT Project'
 
 			BoxLayout:
 
@@ -63,18 +60,6 @@
 								on_release: root.current = 'managementscreen'
 
 							ActionButton:
-								id: about
-								text: 'Sobre'
-								background_color: 0, 3, 0, 0.5
-								on_release: root.current = 'aboutscreen'
-
-							ActionButton:
-								id: business
-								text: 'Negócio'
-								background_color: 0, 3, 0, 0.5
-								on_release: root.current = 'businessscreen'
-
-							ActionButton:
 								id: security
 								text: 'Segurança'
 								background_color: 0, 3, 0, 0.5
@@ -88,12 +73,6 @@
 
 	ManagementScreen:
 		name: 'managementscreen'
-
-	AboutScreen:
-		name: 'aboutscreen'
-
-	BusinessScreen:
-		name: 'businessscreen'
 
 	SecurityScreen:
 		name: 'securityscreen'
@@ -159,89 +138,6 @@
 
 			Label:
 				text: ''
-
-<AboutScreen>:
-	
-	canvas.before:
-		Color:
-			rgba: 180, 180, 180, 0.8
-		Rectangle:
-			pos: self.pos
-			size: self.size
-
-	GridLayout:
-
-		cols: 1
-
-		ActionBar:
-			pos_hint: {'top':1}
-			background_color: 0, 0, 0, 0.3
-
-			ActionView:
-
-				ActionPrevious:
-					app_icon: ''
-					app_icon_width: 30
-					on_release: app.root.current = 'main'
-
-				ActionLabel:
-					text: 'Sobre a iniciativa'
-
-		Image:
-			source: './images/equipe.jpg'
-
-
-		ScrollView:
-		    do_scroll_x: False
-		    do_scroll_y: True
-
-		    Label:
-		    	size_hint: 1, None
-		    	text_size: self.width, None
-		    	size: self.texture_size
-		        text:
-		            '\nSomos a Exponencial, uma empresa nacional de desenvolvimento de tecnologia que tem como fundamento a vontade de levar as principais áreas da tecnologia para todas as regiões e focado a atender o usuário final e as micro e pequenas empresas com um serviço de qualidade e, através das ferramentas tecnológicas e as novas áreas de estudos, alavancar os pequenos negócios. \n\n\nAlém de entregarmos soluções, o nosso principal intuito / diferencial é se tornar parceiros dos nossos clientes, trabalhando para o crescimento mútuo e o desenvolvimento do comércio e da população da região.\n\nMissão: Desenvolver e levar a todas os lugares o que há de novo no mundo da tecnologia a preços acessíveis e com o foco em trazer conforto e resultado a todos. \n\nVisão: Ser uma das maiores empresas de tecnologia e guiar e desenvolvimento a população para o futuro.\n\nValores: Ética, responsabilidade, compromisso e trabalho em equipe define a Exponencial.'
-
-<BusinessScreen>:
-	
-	canvas.before:
-		Color:
-			rgba: 180, 180, 180, 0.8
-		Rectangle:
-			pos: self.pos
-			size: self.size
-
-	GridLayout:
-
-		cols: 1
-
-		ActionBar:
-			pos_hint: {'top':1}
-			background_color: 0, 0, 0, 0.3
-
-			ActionView:
-
-				ActionPrevious:
-					app_icon: ''
-					app_icon_width: 30
-					on_release: app.root.current = 'main'
-
-				ActionLabel:
-					text: 'Plano de Negócio'
-
-		Image:
-			source: './images/canvas.png'
-
-		ScrollView:
-		    do_scroll_x: False
-		    do_scroll_y: True
-
-		    Label:
-		    	size_hint: 1, None
-		    	text_size: self.width, None
-		    	size: self.texture_size
-		        text:
-		        	'\nProblemas:\n- Furtos a residências e estabelecimentos\n- Sentimento de medo e insegurança\n- Invasões e sequestros\n\n\nSolução:\n-Acesso e controle aos equipamentos de segurança a distância\n-Sistema detector de movimento e presença para controle automático.\n\n\nMétricas Chaves:\n- Número de sistema instalados.\n- Número de incorporadoras parceiras.\n\n\nProposta única de valor:\n- Um sistema capaz de solucionar os problemas de furtos e invasão a residências e estabelecimentos, trazendo segurança e tranquilidade aos proprietários e visitantes.\n\n\nVantagem competitiva:\n- Preço acessível\n- Exclusividade no mercado.\n\n\nCanais:\n- Website\n- Aplicativo\n- Corretores de vendas\n\n\nSegmento de clientes:\n- População de classe média à alta.\n - Idade entre 23 à 45 anos.\n- Proprietários de casas e apartamentos.\n- Incorporadoras com público alvo similar.\n\n\nEstrutura de custos:\n- Mão de obra qualificada\n- Instalação e manutenção.\nInfraestrutura e rede de comunicação.\n- Fabricação dos componentes.\n\n\nFonte de receitas:\n- Sistema de automatização residencial.\nEquipamentos complementares ao sistema.\n- Parcerias estratégicas.'
 
 <SecurityScreen>:
 	
