@@ -217,19 +217,3 @@ Project Link: [https://github.com/ccr5/IoT-App](https://github.com/ccr5/IoT-App)
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/mattnobre
 [product-screenshot]: images/home.png
-
-
-# What can I do with this?
-You will need to: 
-1. 2 un - Arduino Uno R3
-2. 2 un - ESP8266 NodeMCU CP2101
-3. 1 un - Display LCD 16x2
-4. 1 un - Biometric Sensor
-5. 1 un - Lock
-6. 1 un - Relay
-7. 1 un - Lamp
-
-You must to charge each ArduinoWifiScript in an Arduino and WifiScript in an ESP8266 NodeMCU. 
-Using jumpers to connect every pin in its respective component. Done! You just need power in each system. 
-Until run the app, change the IP and WiFi network in WifiScript.ino and citig.kv to works.
-
